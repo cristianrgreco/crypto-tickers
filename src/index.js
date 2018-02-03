@@ -9,11 +9,6 @@ if (!process.env.TICKERS) {
 
 (async () => {
   const tickers = process.env.TICKERS.split(',')
-  const results = await Promise.all(
-    tickers.map(async ticker => {
-      const result = await fetchTicker(fetch, ticker)
-      return formatOutput(result)
-    })
-  )
-  console.log(results)
+  const results = await Promise.all(tickers.map(ticker => fetchTicker(fetch, ticker)))
+  results.forEach(result => console.log(formatOutput(result)))
 })()
