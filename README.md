@@ -5,4 +5,4 @@
 TICKERS=bitcoin,ethereum,ripple yarn start
 ```
 
-[screenShot](screenshot.png)
+![screenShot](screenshot.png)
